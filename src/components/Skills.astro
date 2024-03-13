@@ -1,0 +1,96 @@
+---
+import NextIcon from "./icons/NextIcon.astro";
+import ReactIcon from "./icons/ReactIcon.astro";
+import StyledComponentsIcon from "./icons/StyledComponentsIcon.astro";
+import TypescriptIcon from "./icons/TypescriptIcon.astro";
+import FirebaseIcon from "./icons/FirebaseIcon.astro";
+import TailwindIcon from "./icons/TailwindIcon.astro";
+import ReduxIcon from "./icons/ReduxIcon.astro";
+import NodeIcon from "./icons/NodeIcon.astro";
+import MysqlIcon from "./icons/MysqlIcon.astro";
+import Github from "./icons/Github.astro";
+import FigmaIcon from "./icons/FigmaIcon.astro";
+import ExpressIcon from "./icons/ExpressIcon.astro"
+import MongoDBIcon from "./icons/MongoDBIcon.astro"
+import PhpIcon from "./icons/PhpIcon.astro"
+import LaravelIcon from "./icons/LaravelIcon.astro"
+const TAGS = [
+  {
+    name: "Next.js",
+    icon: NextIcon,
+  },
+  {
+    name: "React.js",
+    icon: ReactIcon,
+  },
+  {
+    name: "Styled-Components",
+    icon: StyledComponentsIcon,
+  },
+  {
+    name: "Typescript",
+    icon: TypescriptIcon,
+  },
+  {
+    name: "Firebase",
+    icon: FirebaseIcon,
+  },
+  {
+    name: "Tailwind",
+    icon: TailwindIcon,
+  },
+  {
+    name: "Redux",
+    icon: ReduxIcon,
+  },
+  {
+    name: "Node.js",
+    icon: NodeIcon,
+  },
+  {
+    name: "MySQL",
+    icon: MysqlIcon,
+  },
+  {
+    name: "GitHub",
+    icon: Github,
+  },
+  {
+    name: "Figma",
+    icon: FigmaIcon,
+  },
+  {
+    name: "Express",
+    icon: ExpressIcon
+  },
+  {
+    name: "MongoDB",
+    icon: MongoDBIcon
+  },
+  {
+    name: "PHP",
+    icon: PhpIcon
+  },
+  {
+    name: "Laravel",
+    icon: LaravelIcon
+  },
+];
+---
+
+<ul class="flex gap-4 px-4 flex-row items-cente justify-center flex-wrap mb-2">
+  {
+    TAGS.map((tag) => (
+      <li>
+        <span
+          class={`rounded-full border border-white/10 font-light flex items-center
+        gap-x-2 py-1 px-2 text-sm
+        bg-purple-200/5`}
+        >
+          <tag.icon class="size-4" />
+          <p>{tag.name}</p>
+        </span>
+      </li>
+    ))
+  }
+</ul>

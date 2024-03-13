@@ -1,0 +1,108 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import "@fontsource/geist-sans/200.css";
+import "@fontsource/geist-sans/400.css";
+import "@fontsource/geist-sans/500.css";
+import "@fontsource/geist-sans/700.css";
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <div class="fixed-background"></div>
+    <div id="progress"></div>
+    <Header />
+    <slot />
+    <Footer />
+  </body>
+</html>
+<style>
+  #progress {
+    width: 0%;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    background: white;
+    height: 0.2em;
+    animation: progress-grow auto linear;
+    animation-timeline: scroll(root);
+  }
+
+  @keyframes progress-grow {
+    from {
+      width: 0%;
+    }
+    to {
+      width: 100%;
+    }
+  }
+  .fixed-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-image: url("/fondo mod 2.svg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+</style>
+<style is:global>
+  :root {
+    color-scheme: light dark;
+  }
+  html {
+    font-family:
+      "Geist Sans",
+      system-ui,
+      -apple-system,
+      sans-serif;
+    scroll-behavior: smooth;
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+    background: #050505;
+    min-height: 100vh;
+  }
+  .animated-title {
+    animation: reveal ease-in-out both;
+    animation-timeline: view();
+    animation-range: entry 5% cover 40%;
+  }
+  @keyframes reveal {
+    from {
+      opacity: 0;
+      translate: 0 30px;
+      scale: 0.95;
+    }
+    to {
+      opacity: 1;
+      translate: 0 0;
+      scale: 1;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+</style>

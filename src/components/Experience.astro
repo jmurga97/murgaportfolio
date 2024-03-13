@@ -1,0 +1,55 @@
+---
+import ExperienceItem from "./ExperienceItem.astro";
+
+const EXPERIENCE = [
+  {
+    date: "Jun 2023 - Jan 2024",
+    title: "Software Developer - ACM Venezuela",
+    description: `Developed with NextJS and Firebase Firestore, Storage and Authentication, I led the creation of a user-friendly website for the company.
+        This site helps sell medical equipment for different health areas.
+        It has an easy search for products, a cart to ask for price quotes, and a control panel for making changes to the site.
+        My role was crucial in making sure the site is easy to use while keeping it working well, mantaining a good performance and looking good.`,
+    link: "https://acm-venezuela.com/",
+  },
+  {
+    date: "Jan 2022 - Dec 2023",
+    title: "Software Developer - Servicios Hospitalarios MCG",
+    description: `Developed a company blog with Next.js and Firebase, crafted the company’s main site and its
+    divisions using HTML, CSS, Javascript, and web components, and engineered an Internet connection service for public
+    spaces with Mikrotik Router, Javascript and Firebase, enabling basic user tracking and data analysis for the company.
+    This comprehensive approach not only enhances user engagement but also streamlines company operations and data management.
+    `,
+    link: "https://mcg.com.ve/",
+  },
+  {
+    date: "Feb 2021 - Oct 2022",
+    title: "Software Developer - Internet Para Ti",
+    description: `I developed a web application using React.js, React Context and Firebase to
+    manage ticket sales for Internet access.
+    This platform handles customer registration, ID searches, ticket records, and sales tracking.
+    Additionally, I built the website of the project using HTML, CSS, and Javascript,
+    ensuring a seamless and efficient user experience.`,
+    link: "https://www.internetparati.net/"
+  },
+  {
+    date: "Feb 2019 - Oct 2023",
+    title: "Telecommunications Engineer",
+    description: `As a Engineer, my professional journey has been marked by the creation
+    and implementation of innovative technological solutions for businesses across various industries.
+    This experience has equipped me with a robust foundation of knowledge and practical skills,
+    preparing me to confidently tackle any project.`,
+    link: ''
+  },
+];
+---
+
+<ol  class="relative border-s border-purple-200  ml-3">
+  {
+    EXPERIENCE.map((experience) => (
+      <li class="mb-10 ms-4">
+        <ExperienceItem {...experience} />
+      </li>
+    ))
+  }
+</ol>
+

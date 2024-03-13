@@ -1,0 +1,27 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  link?: string;
+  date: string;
+}
+const { date, title, description, link } = Astro.props;
+import Button from './Button.astro'
+---
+
+<div
+  class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"
+>
+</div>
+<time
+  class="mb-1 text-sm font-medium leading-none text-purple-200"
+  >{date}</time
+>
+<h3 class="animated-title text-lg font-bold text-purple-300">
+  {title}
+</h3>
+<p class="mb-4 text-base font-normal text-gray-200 text-pretty">
+  {description}
+</p>
+{link && <Button link={link} title="Learn more"/>
+}

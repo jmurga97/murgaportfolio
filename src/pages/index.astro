@@ -1,0 +1,84 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Linkedin from "../components/icons/Linkedin.astro";
+import Github from "../components/icons/Github.astro";
+import GmailIcon from "../components/icons/GmailIcon.astro";
+import CodeIcon from "../components/icons/CodeIcon.astro";
+import Briefcase from "../components/icons/Briefcase.astro";
+import Badge from "../components/Badge.astro";
+import SocialBox from "../components/SocialBox.astro";
+import Experience from "../components/Experience.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+import Projects from "../components/Projects.astro";
+import SectionTitle from "../components/SectionTitle.astro";
+import StarsIcon from "../components/icons/StarsIcon.astro";
+import Skills from "../components/Skills.astro"
+---
+
+<Layout
+  title="Portfolio of Murga - Software Developer"
+  description="Portfolio of Juan Murga. A Telecommunications Engineer with 3 years of experience in Software Development"
+>
+  <main class="px-4">
+    <SectionContainer class="pt-32 lg:pt-44 pb-24">
+      <img
+        class="rounded-full size-20 shadow-md mb-4"
+        src="/portfolioavatar.jpg"
+        alt="Murga Picture"
+      />
+      <h1
+        class="animated-title text-white font-bold text-2xl md:text-4xl lg:text-5xl flex flex-row gap-x-4 pb-6 lg:pb-10"
+      >
+        Hey, I'm Juan Murga
+        <a
+          href="https://www.linkedin.com/in/juan-murga/"
+          target="_blank"
+          rel="noopener"
+          class="flex items-center justify-center"
+        >
+          <Badge>Opent to Work</Badge>
+        </a>
+      </h1>
+      <h2 class="text-lg lg:text-2xl text-wrap max-w-[700px]">
+        Engineer with <span class="text-purple-300/80"
+          >3 years of experience</span
+        > in software development, currently living in Valencia, Spain and making
+        the difference in every project I participate in.
+      </h2>
+      <nav class="flex gap-4 mt-10 flex-wrap">
+        <SocialBox href="https://www.linkedin.com/in/juan-murga/">
+          <Linkedin class="size-4 lg:size-6" />
+          LinkedIn
+        </SocialBox>
+
+        <SocialBox href="https://github.com/jmurga97">
+          <Github class="size-4 lg:size-6" />
+          GitHub
+        </SocialBox>
+        <SocialBox href="mailto:murgapja@gmail.com">
+          <GmailIcon class="size-4 lg:size-6" />
+          murgapja@gmail.com
+        </SocialBox>
+      </nav>
+    </SectionContainer>
+    <SectionContainer>
+      <SectionTitle id="experience">
+        <Briefcase class="size-4 lg:size-8" /> Work Experience
+      </SectionTitle>
+      <Experience />
+    </SectionContainer>
+    <SectionContainer>
+      <SectionTitle id="projects">
+        <CodeIcon class="size-4 lg:size-8" /> Projects
+      </SectionTitle>
+      <Projects />
+    </SectionContainer>
+    <SectionContainer>
+      <SectionTitle id="skills">
+        <StarsIcon class="size-4 lg:size-8" /> Skills
+      </SectionTitle>
+      <Skills/>
+    </SectionContainer>
+  </main>
+</Layout>
+<style></style>

@@ -1,0 +1,91 @@
+---
+import NextIcon from "./icons/NextIcon.astro";
+import ReactIcon from "./icons/ReactIcon.astro";
+import StyledComponentsIcon from "./icons/StyledComponentsIcon.astro";
+import TypescriptIcon from "./icons/TypescriptIcon.astro";
+import FirebaseIcon from "./icons/FirebaseIcon.astro";
+import Button from "./Button.astro";
+
+const TAGS = {
+  NEXT: {
+    name: "Next.js",
+    icon: NextIcon,
+  },
+  REACT: {
+    name: "React.js",
+    icon: ReactIcon,
+  },
+  STYLED: {
+    name: "Styled-Components",
+    icon: StyledComponentsIcon,
+  },
+  TS: {
+    name: "Typescript",
+    icon: TypescriptIcon,
+  },
+  FIREBASE: {
+    name: "Firebase",
+    icon: FirebaseIcon,
+  },
+};
+const PROJECTS = [
+  {
+    title: "QMenut - The Digital Menu for Restaurants",
+    description: `QMenut is a mobile-first web application designed to provide a comprehensive service for all types of restaurants,
+            offering the ability to upload their menu online and fully manage it with options to add, edit, and remove dishes at any time.
+            This platform simplifies menu management, making it accessible and convenient for restaurant owners to keep their offerings
+            up-to-date and appealing to customers`,
+    link: "https://demo.qmenut.com/",
+    github: "",
+    image: "/projects/qmenutmockup.webp",
+    tags: [TAGS.REACT, TAGS.NEXT, TAGS.FIREBASE, TAGS.TS, TAGS.STYLED],
+  },
+  {
+    title: "Marvel API",
+    description: `A compact app that retrieves information from the Marvel API.
+        It features a search function to filter through characters previously fetched from the API, a favorites page for quick access,
+        and a detailed page offering basic information about the hero and their top 20 comics.
+        Built with Next.js 14 for server-side rendering (SSR) and React Context for global state management`,
+    link: "https://murgamarvel.vercel.app/",
+    github: "https://github.com/jmurga97/murgamarvel",
+    image: "/projects/marvelsplash.webp",
+    tags: [TAGS.REACT, TAGS.NEXT],
+  },
+];
+---
+
+{
+  PROJECTS.map((project) => (
+    <article class="mb-8">
+      <h3 class="text-lg lg:text-2xl font-bold text-purple-300 mb-2">
+        {project.title}
+      </h3>
+      <p class=" mb-4 text-pretty text-base">{project.description}</p>
+      <ul class="flex gap-2 flex-row flex-wrap mb-2">
+        {project.tags.map((tag) => (
+          <li>
+            <span
+              class={`rounded-full border border-white/10 font-light flex items-center
+            gap-x-2 py-1 px-2 text-sm
+            bg-purple-200/5`}
+            >
+              <tag.icon class="size-4" />
+              <p>{tag.name}</p>
+            </span>
+          </li>
+        ))}
+      </ul>
+      <img
+        class="animated-title rounded shadow-2xl shadow-white/10 aspect-video"
+        src={project.image}
+        alt="Captura de pantalla del proyecto"
+      />
+      <div class="flex items-center gap-x-3 mt-3">
+        <Button link={project.link} title="Check project" />
+        {project.github && (
+          <Button link={project.github} title="Github" />
+        )}
+      </div>
+    </article>
+  ))
+}
